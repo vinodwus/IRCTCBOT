@@ -9,6 +9,26 @@ driver.get("https://www.irctc.co.in/nget/train-search")
 # Wait for the page to load
 time.sleep(5)
 
+# Click on "LOGIN" button
+login = driver.find_element_by_xpath("//a[contains(text(),'LOGIN')]")
+login.click()
+
+# Wait for the login page to load
+time.sleep(5)
+
+# Enter your username and password
+username = driver.find_element_by_xpath("//input[@formcontrolname='userId']")
+username.send_keys("your_username")
+password = driver.find_element_by_xpath("//input[@formcontrolname='pwd']")
+password.send_keys("your_password")
+
+# Click on "Sign in"
+signin = driver.find_element_by_xpath("//button[contains(text(),'SIGN IN')]")
+signin.click()
+
+# Wait for the home page to load
+time.sleep(10)
+
 # Enter the source station
 source = driver.find_element_by_xpath("//input[@placeholder='From*']")
 source.send_keys("Delhi")
